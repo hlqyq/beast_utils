@@ -1,0 +1,1 @@
+c:\python38\python.exe %~dp0beast_web_server.py
