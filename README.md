@@ -11,6 +11,8 @@ It can be used to develop a web application or website by combining bottle.
 1. Dual protocols: HTTP and WebSocket
 1. Flexible ports: plain and SSL on the same port
 
+![example](example.jpg "example")
+
 ## Start
 
 1. After the [build](BUILD.md) is complete. Copy the bin directory as the start sketch.
