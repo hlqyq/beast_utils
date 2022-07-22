@@ -13,8 +13,11 @@ set(CMAKE_VERBOSE_MAKEFILE ON)  # Debug friendly
 project(beast_utils VERSION 1.0.0 LANGUAGES CXX)
 
 # specify the C++ standard
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+set(CMAKE_BUILD_TYPE release)
+message(status "build_type: ${CMAKE_BUILD_TYPE}")
 
 ################################################################################
 ## variables definitions #######################################################

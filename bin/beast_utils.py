@@ -13,14 +13,13 @@ import functools
 import platform
 import threading
 
-beast_utils_dll_base_name, beast_utils_dll_version, os_system = ('beast_utils', '0.1.0', platform.system())
+beast_utils_dll_base_name, beast_utils_dll_version, os_system = ('beast_utils', '1.0.0', platform.system())
 beast_utils_py_path = os.path.dirname(os.path.abspath(__file__))
 if os_system == 'Linux':
     beast_utils_dll_file_name = f'lib{beast_utils_dll_base_name}.so.{beast_utils_dll_version}'
-    if os.path.exists(os.path.join(beast_utils_py_path, '..', 'build')):
-        beast_utils_dll_path = os.path.abspath(os.path.join(beast_utils_py_path, '..', 'build'))
-    else:
-        beast_utils_dll_path = beast_utils_py_path
+    c_uint = ctypes.c_uint64 if '64' in platform.architecture()[0] else ctypes.c_uint32
+    beast_utils_dll_path = beast_utils_py_path
+    _CURRENT_ENVIRON_PATH = os.environ['PATH']
 elif os_system == 'Windows':
     AMD64 = '_64' if 'AMD64' in sys.version else ''
     beast_utils_dll_file_name = f'{beast_utils_dll_base_name}{AMD64}.dll'
